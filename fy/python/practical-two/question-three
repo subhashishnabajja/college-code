@@ -1,0 +1,87 @@
+#Prints out the bill for laptop
+def laptop():
+    print(" ~~~~~ Macbook @ Rs.1,00,000 ~~~~")
+    product_name = "Macbook" 
+    price = 100000 
+    quantity = int(input("Quantity : "))
+    basic_amount = quantity*price 
+    gst_amount = basic_amount*0.18
+    total_amount = basic_amount + gst_amount
+    bill(product_name,price,quantity,basic_amount,gst_amount,total_amount)
+
+#Prints out the bill for iphone
+def iphone():
+    print(" ~~~~~ Iphone @ Rs.50,000 ~~~~")
+    product_name = "Iphone"
+    price = 50000
+    quantity = int(input("Quantity : "))
+    basic_amount = quantity*price
+    gst_amount = basic_amount*0.18
+    total_amount = basic_amount + gst_amount
+    bill(product_name,price,quantity,basic_amount,gst_amount,total_amount)
+
+#Prints out the bill for watch
+def watch():
+    print(" ~~~~~ Watches @ Rs.2,000 ~~~~")
+    product_name = "Iphone"
+    price = 2000
+    quantity = int(input("Quantity : "))
+    basic_amount = quantity*price
+    gst_amount = basic_amount*0.18
+    total_amount = basic_amount + gst_amount
+    bill(product_name,price,quantity,basic_amount,gst_amount,total_amount)
+ 
+
+#Prints out the bill for a given product
+def bill(product_name,price,quantity,basic_amount,gst_amount,total_amount):
+    if quantity > 0:
+        print("~~~~~~~~~~ INVOICE ~~~~~~~~~~~~~")
+        print("Product : ",product_name)
+        print("Price : ",price)
+        print("Quantity : ",quantity)
+        print("Basic Amount : Rs.",basic_amount)
+        print("GST @18% : Rs.",gst_amount)
+        print("Total Bill : Rs.",total_amount)
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    else:
+        print("Quatity cannot be zero")
+
+
+#Gets the code from the user 
+def get_code():
+    print("1 or 'Macbook'- Macbook Rs.1,00,000")
+    print("2 or 'Iphone'- Iphone Rs.50,000")
+    print("3 or 'Watch'- Smartwatches Rs.2,000")
+    print("'Q' or 'q'- to quit")
+
+    code = input("Enter your choice\t")
+
+    return code
+
+#The main function 
+def main():
+    print("~~~~~~~Python Electronics~~~~~~~")
+
+    code = get_code()
+
+    if code == "1" or code == "Macbook":
+        laptop()
+    elif code == "2" or code == "Iphone":
+        iphone()
+    elif code == "3" or code == "Watch":
+        watch()
+    elif code == "q" or code == "Q":
+         print("Thank you for using our program")
+         return
+    else:
+        print("Invalid selection!")
+        print("Please try again")
+        main()
+
+
+
+
+#Running the main function
+if __name__ == "__main__":
+    main()
+
