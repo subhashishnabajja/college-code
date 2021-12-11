@@ -5,7 +5,7 @@ def agetovote():
         print("You are eligible for voting")
     elif age < 18 and age >0:
         print("You are not eligible for voting")
-    else:
+    else: 
         print("Incorrect age value")
         print("Please try again")
         agetovote()
