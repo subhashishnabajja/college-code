@@ -1,8 +1,41 @@
-
 import socket
 
+HOST  = socket.gethostname()
+PORT = 3000
+ADDR = (HOST, PORT)
 
-def server_program():
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+def server_program ():
+    server.bind(ADDR)
+    server.listen()
+    conn, addr = server.accept()
+
+    while True:
+        print(f"[Connection] A device connected with {addr}")
+        data = conn.recv(1024).decode()
+        if not data:
+            break
+        
+        conn.send("Message Received".encode())
+        print(f"[{addr}] {data}")
+
+    conn.close()
+
+server_program()
+
+
+
+
+
+
+
+
+
+
+
+
+""" def server_program():
     # get the hostname
     host = socket.gethostname()
     port = 5000  # initiate port no above 1024
@@ -29,5 +62,4 @@ def server_program():
 
 
 if __name__ == '__main__':
-    server_program()
-    
+    server_program() """
