@@ -99,20 +99,17 @@ def matrixMultiplication(arrayOne, arrayTwo):
     ROW, _ = arrayOne.shape
     _ ,COLUMN = arrayTwo.shape
 
-    result = []
-
-    for i in range(ROW):
-        row = [0 for i in range(ROW) ]
-        print(row)
-
-        for j in range(COLUMN):
-            
-            for k in range(arrayTwo.shape[1]):
-                row[k] += arrayOne[i][k] * arrayTwo[k][j] 
-
-        result.append(row)
-
+    result = [[0 for j in range(COLUMN)] for i in range(ROW)]
     print(result)
+    for i in range(ROW):
+       
+       for j in range(COLUMN):
+
+           for k in range(arrayTwo.shape[0]):
+               result[i][j] +=  arrayOne[i][k] * arrayTwo[k][j]
+
+
+    print(np.array(result))
 
 
 matrixMultiplication(getArray(), getArray())
