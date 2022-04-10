@@ -3,12 +3,10 @@ from tkinter import ttk
 from tkinter.messagebox import showinfo
 
 
+
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-
-        self.title('Treeview demo')
-        self.geometry('620x200')
 
         self.tree = self.create_tree_widget()
 
@@ -50,4 +48,6 @@ class App(tk.Tk):
 
 if __name__ == '__main__':
     app = App()
+    app.geometry("600x200")
+    app.title("F093 / Subhashish Nabajja")
     app.mainloop()

@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 
 root = tk.Tk()
+root.geometry("300x200")
+root.title("F093 / Subhashish Nabajja")
 
 selected = tk.StringVar()
 r1 = ttk.Radiobutton(root, text='Option 1', value='Value 1', variable=selected)

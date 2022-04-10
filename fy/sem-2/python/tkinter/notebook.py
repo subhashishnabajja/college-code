@@ -2,7 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 
 root = tk.Tk()
-
+root.geometry("300x200")
+root.title("F093 / Subhashish Nabajja")
 
 notebook = ttk.Notebook(root)
 notebook.pack(fill="both", expand=True)

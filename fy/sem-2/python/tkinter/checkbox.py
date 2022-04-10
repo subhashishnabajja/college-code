@@ -7,6 +7,7 @@ from tkinter import ttk
 
 root = tk.Tk()
 root.title("F093 / Subhashish Nabajja")
+root.geometry("300x200")
 
 agreement = tk.StringVar()
 
