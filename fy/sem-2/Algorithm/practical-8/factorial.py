@@ -1,3 +1,11 @@
+import time
+import numpy as np
+import sys
+from matplotlib import pyplot
+
+
+
+
 def factorial(n):
     if n <= 1:
         return 1
@@ -5,7 +13,7 @@ def factorial(n):
     else:
         return n * factorial(n - 1)
 
-print(factorial(5))
+
 
 
 def factorialIter(n):
@@ -18,4 +26,21 @@ def factorialIter(n):
         fact *= i
 
 
-factorialIter(5)
+nums = []
+times = []
+
+for num in range(100):
+    start_time = time.perf_counter()
+    factorialIter(num)
+    elapsed_time = time.perf_counter() - start_time
+    nums.append(num)
+    times.append(elapsed_time)
+
+  
+
+pyplot.xlabel("Number")
+pyplot.ylabel("Time (in seconds)")
+pyplot.title('Factorial Iterative')
+pyplot.plot(nums, times)
+
+pyplot.show()   
