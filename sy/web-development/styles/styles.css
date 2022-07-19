@@ -16,6 +16,10 @@ iframe {
   display: block;
 }
 
+textarea {
+  resize: none;
+}
+
 /*States*/
 .block {
   display: block;
@@ -82,4 +86,15 @@ iframe {
 
 .height-screen {
   height: 100vw;
+}
+
+.resize-x {
+  resize: horizontal;
+}
+
+.resize-y {
+  resize: vertical;
+}
+.resize {
+  resize: both;
 }
