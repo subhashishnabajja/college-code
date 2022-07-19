@@ -1,0 +1,85 @@
+/*Elements*/
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+iframe {
+  display: block;
+}
+
+/*States*/
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.button-primary {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.gap-sm {
+  gap: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+
+.img-sm {
+  width: 64px;
+  aspect-ratio: 1;
+  display: inline-block;
+}
+
+.img-md {
+  width: 128px;
+  aspect-ratio: 1;
+  display: inline-block;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-screen {
+  width: 100vw;
+}
+
+.height-full {
+  height: 100%;
+}
+
+.height-screen {
+  height: 100vw;
+}
