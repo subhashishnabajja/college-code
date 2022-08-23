@@ -57,9 +57,23 @@ textarea {
   cursor: pointer;
 }
 
+.button-primary:hover, .button-primary:focus-visible{
+  background-color: rgb(34, 34, 34);
+  text-decoration: underline;
+}
+
+.text-gradient{
+  color: ;
+}
+
 .gap-sm {
   gap: 1rem;
 }
+
+.gap-md {
+  gap: 1.5rem;
+}
+
 .text-center {
   text-align: center;
 }
