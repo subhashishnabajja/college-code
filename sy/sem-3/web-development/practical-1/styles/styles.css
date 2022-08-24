@@ -1,0 +1,49 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.button-primary {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.gap-sm {
+  gap: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+
+.img-sm {
+  width: 64px;
+  aspect-ratio: 1;
+  display: inline-block;
+}

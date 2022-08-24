@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 5</title>
+</head>
+<style>
+    body{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    h1{
+        text-align: center;
+    }
+    img{
+        display: block;
+        margin: auto;
+        border: 1px solid gray;
+    }
+
+
+</style>
+<body>
+    <h1>Image mapping</h1>
+    <img height="500" width="500" src="./assets/mapped-image-500.png" usemap="#imagemap">
+
+    <map name="imagemap">
+        <area shape="circle" coords="146.22, 146.22, 100" href="https://google.com" alt="Google">
+        <area shape="circle" coords="353.17, 130.48, 57.87" href="https://youtube.com" alt="Youtube">
+        <area shape="circle" coords="281.41, 279.09, 57.87" href="https://gmail.com" alt="Gmail">
+        <area shape="circle" coords="126.31, 337.43, 57.87" href="https://drive.google.com" alt="Drive">
+        <area shape="rect" coords="335, 350, 439, 426" href="https://facebook.com" alt="Facebook">
+        <area shape="poly" coords="125, 0, 250, 40, 375, 0" href="#" alt="Home">
+        <area shape="poly" coords="125, 500, 250, 460, 375, 500" href="#" alt="Home">
+        
+    </map>
+</body>
+</html>
