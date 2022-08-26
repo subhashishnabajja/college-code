@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 9 | Subhashish Nabajja</title>
+</head>
+<body>
+    <script>
+            const checkNumber = () => {
+
+            const number = parseInt(prompt("Enter a number"))
+
+            if(isNaN(number)){ 
+                alert("Please enter a valid number")
+                return checkNumber()
+            }
+
+            alert(number % 2 === 0 ? "The number is even" : "The number is odd" )
+
+            const rerun = confirm("Do you want the program to run again")
+            rerun && checkNumber()
+            
+        }
+
+        checkNumber()
+    </script>
+</body>
+</html>
