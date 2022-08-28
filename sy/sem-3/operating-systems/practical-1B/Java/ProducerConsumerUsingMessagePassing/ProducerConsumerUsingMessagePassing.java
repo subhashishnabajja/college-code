@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package producerconsumerusingmessagepass;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -11,7 +6,7 @@ import java.util.Queue;
 class Producer extends Thread {
 
     private int MAX_SIZE = 10;
-    private Queue<String> messageQueue = new LinkedList();
+    private Queue<String> messageQueue = new LinkedList<String>();
 
     @Override
     public void run() {
@@ -85,14 +80,14 @@ class Consumer extends Thread {
                 System.out.println("Got message: " + message);
                 sleep(2000);
             }
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ex) {
             System.out.println("Error Ocurred" + ex.getLocalizedMessage());
         }
 
     }
 }
 
-public class ProducerConsumerMessagePassing {
+public class ProducerConsumerUsingMessagePassing {
 
     /**
      * @param args the command line arguments

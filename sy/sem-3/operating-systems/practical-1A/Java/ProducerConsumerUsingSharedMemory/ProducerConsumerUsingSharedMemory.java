@@ -1,9 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package producerconsumersharedmem;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
@@ -67,13 +61,13 @@ class Consumer extends Thread {
     }
 }
 
-public class ProducerConsumerSharedMem {
+public class ProducerConsumerUsingSharedMemory {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        List<Integer> sharedbuffer = new ArrayList(10);
+        List<Integer> sharedbuffer = new ArrayList<Integer>(10);
         Semaphore semaphore = new Semaphore(1);
 
         Producer producer = new Producer(sharedbuffer, semaphore);
