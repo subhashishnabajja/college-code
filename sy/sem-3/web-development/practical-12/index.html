@@ -14,13 +14,15 @@
       <input name="years" type="text" id="years" required />
       <label for="rateOfInterest">Rate of Interest</label>
       <input name="rateOfInterest" type="text" id="rateOfInterest" />
-      <button>Submit</button>
+      <button>Calculate</button>
     </form>
 
     <h2 id="result"></h2>
 
     <script>
       const form = document.querySelector(".form");
+
+      const calculateInterest = (p, r, t) => p * (r / 100) * t;
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -38,13 +40,17 @@
           return;
         }
 
-        const amount = principalAmount * (1 + (rateOfInterest / 100) * years);
-
-        console.log(principalAmount, years, rateOfInterest);
+        const interest = calculateInterest(
+          principalAmount,
+          rateOfInterest,
+          years
+        );
 
         document.getElementById(
           "result"
-        ).innerHTML = `The amount will be ${amount}`;
+        ).innerHTML = `The interest is ${interest} \n The total amount is ${
+          principalAmount + interest
+        }`;
       });
     </script>
   </body>
