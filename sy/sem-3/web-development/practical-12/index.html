@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practical 12 | S091 Subhashish Nabajja</title>
-</head>
-<body>
-
-    <form class="form" >
-        <label for="principalAmount">Principal Amount</label>
-        <input type="number" id="principalAmount" required min="1" step="0.001">
-        <label for="years" >Number of years</label>
-        <input name="years" type="number" id="years" required min="1" >
-        <label for="rateOfInterest">Rate of Interest</label>
-        <input name="rateOfInterest" type="number" id="rateOfInterest" min="0" step="0.1">
-        <button>Submit</button>
+  </head>
+  <body>
+    <form class="form">
+      <label for="principalAmount">Principal Amount</label>
+      <input type="text" id="principalAmount" required min="1" step="0.001" />
+      <label for="years">Number of years</label>
+      <input name="years" type="text" id="years" required />
+      <label for="rateOfInterest">Rate of Interest</label>
+      <input name="rateOfInterest" type="text" id="rateOfInterest" />
+      <button>Submit</button>
     </form>
 
+    <h2 id="result"></h2>
+
     <script>
+      const form = document.querySelector(".form");
 
-        
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-        const form = document.querySelector(".form")
+        const principalAmount = parseFloat(
+          document.querySelector("#principalAmount").value
+        );
+        const years = parseFloat(document.querySelector("#years").value);
+        const rateOfInterest = parseFloat(
+          document.querySelector("#rateOfInterest").value
+        );
 
-        form.addEventListener("submit", (e) =>{
-            e.preventDefault()
-            
-            const principalAmount = document.querySelector("#principalAmount")
-            const years = document.querySelector("#years")
-            const rateOfInterest = document.querySelector("#rateOfInterest")
+        if (isNaN(principalAmount) || isNaN(rateOfInterest) || isNaN(years)) {
+          alert("Please enter valid details");
+          return;
+        }
 
+        const amount = principalAmount * (1 + (rateOfInterest / 100) * years);
 
-            
+        console.log(principalAmount, years, rateOfInterest);
 
-
-        })
+        document.getElementById(
+          "result"
+        ).innerHTML = `The amount will be ${amount}`;
+      });
     </script>
-    
-</body>
+  </body>
 </html>
