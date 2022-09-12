@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practial 16 | Subhashish Nabajja</title>
+  </head>
+  <body>
+    <p id="alert-count">Alert count : 0</p>
+    <button id="alert">Alert Me!</button>
+    <button id="cancel">Cancel Alert</button>
+
+    <script>
+      const alertButton = document.querySelector("#alert");
+      const cancelButton = document.querySelector("#cancel");
+      let id;
+      let count = 0;
+
+      const counter = () => {
+        count++;
+        document.querySelector(
+          "#alert-count"
+        ).innerHTML = `Alert count : ${count}`;
+        alert("You are alerted");
+      };
+
+      alertButton.addEventListener("click", (e) => {
+        id = setTimeout(counter, 5000);
+      });
+
+      cancelButton.addEventListener("click", (e) => {
+        clearTimeout(id);
+        alert("Alert canceled");
+      });
+    </script>
+  </body>
+</html>

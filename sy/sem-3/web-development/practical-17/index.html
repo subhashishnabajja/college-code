@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 17 | S091 Subhashish Nabajja</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">Username: </label>
+      <input name="username" id="username" type="text" />
+      <label for="password">Password: </label>
+      <input name="password" id="password" type="password" />
+      <button>Submit</button>
+    </form>
+
+    <script>
+      const users = [
+        {
+          name: "JhonDoe",
+          password: "12345678",
+        },
+        {
+          name: "MariaDoe",
+          password: "maria@do",
+        },
+        {
+          name: "MaxVerstrappen",
+          password: "max@red",
+        },
+      ];
+
+      const form = document.querySelector("form");
+      let trials = 1;
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(trials);
+        const username = document.querySelector("#username").value;
+        const password = document.querySelector("#password").value;
+
+        if (password.length > 8) {
+          alert("The should have maximum 8 characters");
+          document.querySelector("#password").value = "";
+        }
+
+        if (trials > 3) {
+          alert("You have exceded the number of trials");
+          document.querySelector("#username").value = "";
+          document.querySelector("#password").value = "";
+          return;
+        }
+
+        let usr;
+
+        for (const user of users) {
+          if (user.name === username && user.password === password) {
+            usr = user;
+          }
+        }
+
+        if (usr) {
+          alert("Welcome to your account");
+          trials = 0;
+        } else {
+          alert("Invalid username or password");
+          trials++;
+        }
+
+        document.querySelector("#username").value = "";
+        document.querySelector("#password").value = "";
+      });
+    </script>
+  </body>
+</html>
