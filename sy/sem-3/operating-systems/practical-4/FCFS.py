@@ -22,7 +22,7 @@ class Process:
 
 
    
-
+ 
 if __name__ == "__main__":
     processes = [
         Process("1", 24),
