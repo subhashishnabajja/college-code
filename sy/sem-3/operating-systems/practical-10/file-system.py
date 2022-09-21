@@ -87,6 +87,6 @@ while True:
         elif crud == 4:
             fs.delete(is_file_or_folder(file_or_folder), input(f"Enter a {is_file_or_folder(file_or_folder)} name : "))
         elif crud == 5:
-            quit()
+            quit() 
     except:
         print("Please enter a valid number")
