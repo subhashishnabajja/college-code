@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 21 | S091 Subhashish Nabajja</title>
+    <style>
+      img {
+        object-fit: cover;
+        cursor: pointer;
+      }
+    </style>
+    <script language="javascript">
+      const XMLHttpRequestObject = new XMLHttpRequest();
+
+      function getData(dataSource, divID) {
+        if (XMLHttpRequestObject) {
+          var obj = document.getElementById(divID);
+          XMLHttpRequestObject.open("GET", dataSource);
+          XMLHttpRequestObject.onreadystatechange = function () {
+            if (
+              XMLHttpRequestObject.readyState == 4 &&
+              XMLHttpRequestObject.status == 200
+            ) {
+              obj.innerHTML = XMLHttpRequestObject.responseText;
+            }
+          };
+          XMLHttpRequestObject.send(null);
+        }
+      }
+
+      function clearContent(id) {
+        document.getElementById(id).innerHTML = "";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Made with AJAX</h1>
+    <img
+      src="https://assets.cntraveller.in/photos/60ba26c0bfe773a828a47146/4:3/w_1440,h_1080,c_limit/Burgers-Mumbai-Delivery.jpg"
+      alt="Burger"
+      width="250"
+      height="250"
+      onmouseover="getData('./burgers.txt', 'order')"
+      onmouseleave="clearContent('order')"
+    />
+    <img
+      src="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg"
+      alt="Pizzas"
+      width="250"
+      height="250"
+      onmouseover="getData('./pizzas.txt', 'order')"
+      onmouseleave="clearContent('order')"
+    />
+    <img
+      src="https://static.toiimg.com/thumb/54714340.cms?imgsize=458099&width=800&height=800"
+      alt="Sandwich"
+      width="250"
+      height="250"
+      onmouseover="getData('./sandwich.txt', 'order')"
+      onmouseleave="clearContent('order')"
+    />
+
+    <div id="order"></div>
+  </body>
+</html>
